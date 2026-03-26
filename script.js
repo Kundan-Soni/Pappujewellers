@@ -145,12 +145,18 @@ y
 y+=15;
 
 /* GENERATE UPI QR */
+const qrImg=new Image();
+qrImg.src="upi.png";
 
-const upi="upi://pay?pa=kundan@upi&pn=Kundan%20Jewellers&am="+totalAmount+"&cu=INR";
+qrImg.onload=function(){
 
-QRCode.toDataURL(upi,function(err,url){
+doc.addImage(qrImg,"PNG",150,y-10,40,40);
 
-doc.addImage(url,"PNG",150,y-10,40,40);
+// const upi="upi://pay?pa=kundan@upi&pn=Kundan%20Jewellers&am="+totalAmount+"&cu=INR";
+
+// QRCode.toDataURL(upi,function(err,url){
+
+// doc.addImage(url,"PNG",150,y-10,40,40);
 
 /* TERMS */
 
@@ -163,7 +169,7 @@ doc.text("Thank you for shopping with us!",14,y+20);
 
 doc.save("GST_Invoice_Kundan_Jewellers.pdf");
 
-});
+};
 
 };
 }
