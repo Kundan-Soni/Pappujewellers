@@ -89,7 +89,7 @@ const {jsPDF}=window.jspdf;
 const doc=new jsPDF();
 
 const headerImg=new Image();
-headerImg.src="header.png";
+headerImg.src="heade.png";
 
 headerImg.onload=function(){
 
